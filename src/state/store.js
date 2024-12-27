@@ -1,5 +1,10 @@
 import { createStore } from "effector";
-import { addTask } from "./events";
+import { addTask, toggleTask } from "./events";
 
-export const taskStore = createStore([])
+export const tasksStore = createStore([])
     .on(addTask, (state, task) => [...state, task]) /* В новом массиве развертывается имеющийся массив и добавляется новая задача */
+    .on(toggleTask, (state, id) =>
+        state.map((task) =>
+            task.id === id ? { ...task, completed: !task.completed } : task
+        )
+    )

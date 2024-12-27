@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { addTask } from "../state/events";
 import { useUnit } from "effector-react";
-import { taskStore } from "../state/store";
+import { tasksStore } from "../state/store";
 
 function AddTaskForm() {
     const [taskText, setTaskText] = useState('');
 
-    const tasks = useUnit(taskStore);
+    const tasks = useUnit(tasksStore);
 
     const handleAddTask = (e) => {
         e.preventDefault();
