@@ -1,10 +1,34 @@
+import { useState } from "react";
+import { addTask } from "../state/events";
+import { useUnit } from "effector-react";
+import { taskStore } from "../state/store";
+
 function AddTaskForm() {
+    const [taskText, setTaskText] = useState('');
+
+    const tasks = useUnit(taskStore);
+
+    const handleAddTask = (e) => {
+        e.preventDefault();
+        if (taskText.trim()) {
+            const newTask = {
+                id: tasks.length + 1,
+                text: taskText,
+                complete: false
+            }
+            addTask(newTask);
+            setTaskText('');
+        }
+    };
+
     return (
-        <form className="add-task-form">
+        <form className="add-task-form" onSubmit={handleAddTask}>
             <input
-                type="text"
-                placeholder="Enter new task"
                 className="task-input"
+                type="text"
+                value={taskText}
+                placeholder="Enter new task"
+                onChange={(e) => setTaskText(e.target.value)}
             />
             <button type="submit" className="add-task-button">
                 Add task
