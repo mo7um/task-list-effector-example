@@ -1,6 +1,7 @@
 import { useUnit } from 'effector-react';
 import { toggleTask } from './../state/events';
 import { tasksStore } from './../state/store';
+import './styles/TaskList.css'
 
 function TaskList() {
     const tasks = useUnit(tasksStore);

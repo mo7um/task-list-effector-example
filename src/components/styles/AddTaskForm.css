@@ -1,0 +1,26 @@
+.add-task-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-input {
+    padding-inline: 10px;
+    flex: 1;
+
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #101010;
+    color: #ccc;
+
+    transition: border-color 0.5s;
+}
+.task-input:hover {
+    outline: 1px solid #5899e8;
+}
+
+.add-task-button:hover {
+    color: #5899e8;
+    border-color: #5899e8;;
+}

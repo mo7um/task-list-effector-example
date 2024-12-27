@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addTask } from "../state/events";
 import { useUnit } from "effector-react";
 import { tasksStore } from "../state/store";
+import './styles/AddTaskForm.css'
 
 function AddTaskForm() {
     const [taskText, setTaskText] = useState('');
