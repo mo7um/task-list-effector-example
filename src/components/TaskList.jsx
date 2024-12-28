@@ -17,7 +17,7 @@ function TaskList() {
                     key={task.id}
                     className={`task-item ${task.completed ? 'completed' : ''}`}
                 >
-                    {task.text}
+                    <span className='task-text'>{task.text}</span>
                     <button
                         className="toggle-task-button"
                         onClick={() => handleToggleTask(task.id)}

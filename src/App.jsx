@@ -1,6 +1,6 @@
-import './App.css';
 import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList';
+import './App.css';
 
 function App() {
     return (
